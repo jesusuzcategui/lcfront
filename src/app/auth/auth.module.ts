@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-
+// MDB DEPENDENCYS
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 
 
 @NgModule({
@@ -13,7 +14,11 @@ import { RegisterComponent } from './pages/register/register.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    MdbFormsModule
+  ],
+  exports: [
+    MdbFormsModule
   ]
 })
 export class AuthModule { }
