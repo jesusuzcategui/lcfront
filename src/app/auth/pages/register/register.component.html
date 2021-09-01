@@ -2,19 +2,23 @@
   <div class="card-header">BIENVENIDO</div>
   <div class="card-body">
     <h5 class="card-title">Registrate</h5>
+    <hr>
+    <pre>
+      {{registerData | json }}
+    </pre>
     <mdb-form-control>
-      <input mdbInput type="text" id="form1" class="form-control" />
+      <input [(ngModel)]="registerData.name" mdbInput type="text" id="form1" class="form-control" />
       <label mdbLabel class="form-label" for="form1">Nombre</label>
     </mdb-form-control>
     <mdb-form-control>
-      <input mdbInput type="email" id="form2" class="form-control" />
+      <input [(ngModel)]="registerData.email" mdbInput type="email" id="form2" class="form-control" />
       <label mdbLabel class="form-label" for="form2">Email</label>
     </mdb-form-control>
     <mdb-form-control>
-      <input mdbInput type="password" id="form3" class="form-control" />
+      <input [(ngModel)]="registerData.password" mdbInput type="password" id="form3" class="form-control" />
       <label mdbLabel class="form-label" for="form3">Contraseña</label>
     </mdb-form-control>
-    <button type="button" class="btn btn-primary">Registrarme</button>
+    <button (click)="sendRegister()" type="button" class="btn btn-primary">Registrarme</button>
   </div>
 </div>
 
