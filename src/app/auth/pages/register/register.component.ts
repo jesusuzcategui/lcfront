@@ -1,5 +1,6 @@
 import { AuthService } from '../../auth.service';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -13,9 +14,14 @@ export class RegisterComponent implements OnInit {
     password:''
   }
 
-  constructor(private service : AuthService ) { }
+  constructor(private service : AuthService,private toastr: ToastrService ) { }
 
   ngOnInit(): void {
+
+    this.toastr.success('Hello world!', 'Toastr fun!', {
+      timeOut: 3000,
+      positionClass:'toast-top-right'
+    });
   }
 
   sendRegister(){
