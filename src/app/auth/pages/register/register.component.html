@@ -3,23 +3,30 @@
   <div class="card-body">
     <h5 class="card-title">Registrate</h5>
     <hr>
-    <pre>
-      {{registerData | json }}
-    </pre>
-    <mdb-form-control>
-      <input [(ngModel)]="registerData.name" mdbInput type="text" id="form1" class="form-control" />
+    <form [formGroup]="registerForm" (submit)="sendRegister()">
+      <mdb-form-control>
+      <input formControlName="name" mdbInput type="text" id="form1" class="form-control" required />
       <label mdbLabel class="form-label" for="form1">Nombre</label>
+      <div class="valid-feedback">Looks good!</div>
     </mdb-form-control>
     <mdb-form-control>
-      <input [(ngModel)]="registerData.email" mdbInput type="email" id="form2" class="form-control" />
+      <input formControlName="email"  mdbInput type="email" id="form2" class="form-control" />
       <label mdbLabel class="form-label" for="form2">Email</label>
     </mdb-form-control>
     <mdb-form-control>
-      <input [(ngModel)]="registerData.password" mdbInput type="password" id="form3" class="form-control" />
+      <input formControlName="password" mdbInput type="password" id="form3" class="form-control" />
       <label mdbLabel class="form-label" for="form3">Contraseña</label>
-    </mdb-form-control>
-    <button (click)="sendRegister()" type="button" class="btn btn-primary">Registrarme</button>
+    </mdb-form-control><!-- Checked checkbox -->
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox"  formControlName="acceptTerms" id="acceptTerms" />
+      <label class="form-check-label" for="acceptTerms">
+        Acepta los <a href="">Terminos y condiciones</a>
+      </label>
+    </div>
+
+    <button [disabled]="registerForm.invalid"  type="submit" class="btn btn-primary">Registrarme</button>
+    <!--<button (click)="sendRegister()" type="button" class="btn btn-primary">Registrarme</button>-->
+    </form>
+
   </div>
 </div>
-
-

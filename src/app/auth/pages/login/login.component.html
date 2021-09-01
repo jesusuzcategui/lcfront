@@ -3,16 +3,19 @@
   <div class="card-body">
     <h5 class="card-title">Ingresar <i class="fas fa-user"></i></h5>
     <hr>
-
-
-    <mdb-form-control>
-      <input  mdbInput type="email" id="form2" class="form-control" />
+    {{loginForm.value | json}}
+    <hr>
+    <form [formGroup]="loginForm" (submit)="doLogin()">
+      <mdb-form-control>
+      <input formControlName="email" mdbInput type="email" id="form2" class="form-control" />
       <label mdbLabel class="form-label" for="form2">Email</label>
     </mdb-form-control>
     <mdb-form-control>
-      <input  mdbInput type="password" id="form3" class="form-control" />
+      <input formControlName="password" mdbInput type="password" id="form3" class="form-control" />
       <label mdbLabel class="form-label" for="form3">Contraseña</label>
     </mdb-form-control>
-    <button type="button" class="btn btn-primary">Iniciar sesión </button>
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Iniciar sesión </button>
+    </form>
+
   </div>
 </div>
