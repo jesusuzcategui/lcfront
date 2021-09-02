@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  @Input() show : Boolean = true;
+
+  constructor(private el: ElementRef) { }
 
   ngOnInit(): void {
+    if(!this.show)
+      this.el.nativeElement.remove();
   }
 
 }
