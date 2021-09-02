@@ -2,9 +2,7 @@
   <div class="card-header">BIENVENIDO</div>
   <div class="card-body">
     <h5 class="card-title">Ingresar <i class="fas fa-user"></i></h5>
-    <hr>
-    {{loginForm.value | json}}
-    <hr>
+
     <form [formGroup]="loginForm" (submit)="doLogin()">
       <mdb-form-control>
       <input formControlName="email" mdbInput type="email" id="form2" class="form-control" />

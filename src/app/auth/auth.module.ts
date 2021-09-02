@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 
 // MDB DEPENDENCYS
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { UserListComponent } from './pages/user-list/user-list.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserListComponent
   ],
   imports: [
     CommonModule,

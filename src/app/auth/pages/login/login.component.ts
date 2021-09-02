@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
           timeOut: 3000,
           positionClass:'toast-top-right'
         });
+
+        this.router.navigate(['/'])
       }
     }).catch((error)=>{
       console.log(error);

@@ -28,7 +28,7 @@ export class AuthService {
   }
   // Localstorage token seting
   loginUserLS(token:string){
-      this.cookieService.set('usertkn', token);
+      this.cookieService.set('usertkn', token,4,'/');
   }
 
   registerUser(data:any){
