@@ -1,3 +1,4 @@
+import { CoreModule } from './../core/core.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,14 +17,15 @@ import { UserListComponent } from './pages/user-list/user-list.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    UserListComponent
+    UserListComponent,
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     MdbFormsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CoreModule
   ],
   exports: [
     MdbFormsModule

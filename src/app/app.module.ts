@@ -10,17 +10,15 @@ import { ToastrModule } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import {MDBBootstrapModule} from "angular-bootstrap-md";
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
-    NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
